@@ -1,7 +1,9 @@
 <%- include('partials/header') -%>
 
 <main class="form-signin w-100 m-auto">
-  <div class="row justify-content-center">
+
+  <div class="row align-items-center justify-content-center w-75 m-auto">
+
     <section class="col-6 mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
@@ -10,6 +12,7 @@
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
       <form action="/login" method="POST">
+
         <div class="form-floating">
           <input
             type="email"
@@ -22,6 +25,7 @@
             >Email address</label
           >
         </div>
+
         <div class="form-floating">
           <input
             type="password"
@@ -31,10 +35,14 @@
           />
           <label for="exampleInputPassword1" class="form-label">Password</label>
         </div>
+
         <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Sign in</button>
+
       </form>
     </section>
+
   </div>
+
 </main>
 
 <%- include('partials/footer') -%>
