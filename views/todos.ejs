@@ -1,16 +1,17 @@
 <%- include('partials/header') -%>
-
-    <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
+<div class="d-flex align-items-center justify-content-center my-3">
+      <div class="card w-50 p-3 ">
+        <h2>Class Available</h2>
+        <ul>
+    <%todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
+                <span class='del'>  </span>
             </li>
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <h2><%= user.userName %> has <%= left %> Class Available.</h2>
 
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
@@ -20,5 +21,8 @@
     <a href="/logout">Logout</a>
 
     <script src="js/main.js"></script>
-
+    </div>
+</div>
 <%- include('partials/footer') -%>
+        
+    
